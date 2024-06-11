@@ -1,5 +1,0 @@
-#task directories
-input/
-output/
-data_orgn/
-
