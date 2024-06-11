@@ -19,7 +19,6 @@ if(dir.exists("/Users/sebas/OneDrive")){
   inpt_igac <- "/Users/nico//3_Resultados_Fragmentacion_Municipal.xlsx"
   
   otpt_igac <- "/Users/nico"
-  
 }
 
 
@@ -87,8 +86,12 @@ colnames(igac) <- names_clean_join_3
 
 igac <- igac %>% 
   select(-starts_with("delete")) %>% 
-  mutate(recordid = hash_ids(.))
+  mutate(recordid = hash_ids(.)) %>% 
+  relocate(recordid)
 
+n_igac <- nrow(igac)
+
+stopifnot(length(unique(igac$recordid)) == n_igac)
 
 log_info("EXPORT")
 write_parquet(igac, otpt_igac)
