@@ -1,4 +1,4 @@
+*.Rhistory
 output/
 data_orgn/
 input/
-.Rhistory
