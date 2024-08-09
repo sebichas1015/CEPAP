@@ -14,7 +14,9 @@ if(dir.exists("/Users/sebas/OneDrive")) {
   
   input_1 <- "/Users/sebas/OneDrive/Documents/CEPAP/team_data/cifras_agro/igac_gini/process/input/GINI_MUNICIPAL_PERCENTILES.csv"
   
-  output_1 <- "/Users/sebas/OneDrive/Documents/CEPAP/team_data/cifras_agro/censo_agrpqr_2014/reqrmnt_icononzo_castillo_2024.06.12/output/resultados_incononzo_castillo.xlsx"
+  output_1 <- "/Users/sebas/OneDrive/Documents/CEPAP/team_data/cifras_agro/igac_gini/process/output/gini_igac.parquet"
+  
+  output_2 <- "/Users/sebas/OneDrive/Documents/CEPAP/team_data/cifras_agro/igac_gini/process/output/gini_igac_perc.parquet"
 } else {
   input_1 <- "/Users/ruta_nico"
 }
@@ -54,11 +56,26 @@ gini_igac %>%
   verify(all(n_recs == 3))
 
 log_info("select cols")
-n_cols_gini_igac <- ncol(gini_igac)
+n_cols_gini_igac_per <- ncol(gini_igac_perc)
+
+n_col_igac <- ncol(gini_igac)
 
 gini_igac_perc <- gini_igac_perc %>% 
   select(-no_propietarios, -no_predios, -area_ha, -area_m2, -disparidad_superior) %>% 
-  verify(ncol(.) == n_cols_gini_igac - 5)
+  distinct() %>% 
+  verify(ncol(.) == n_cols_gini_igac_per - 5)
+  
+gini_igac <- gini_igac %>% 
+  select(-percentiles) %>% 
+  distinct() %>% 
+  verify(ncol(.) == n_col_igac - 1)
 
+log_info("export")
+write_parquet(gini_igac, output_1)
 
+write_parquet(gini_igac_perc, output_2)
 
+rm(gini_igac, gini_igac_perc)
+gc()
+
+log_info("done clean.R")
