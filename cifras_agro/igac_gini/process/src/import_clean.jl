@@ -5,7 +5,7 @@
 # =========================================
 # CEPAP/team_data/cifras_agro/igac_gini/input/GINI_MUNICIPAL_PERCENTILES.csv
 
-using Pkg, DataFrames, CSV, Random, Dates, StringEncodings, Transliterate, Arrow
+using Pkg, DataFrames, CSV, Random, Dates, StringEncodings, Transliterate, TidierFiles
 
 Random.seed!(19481210)
 
@@ -52,8 +52,8 @@ select!(gini_igac, vars_selct)
 println("export--", now())
 output_1 = "C:/Users/sebas/OneDrive/Documents/CEPAP/team_data/cifras_agro/igac_gini/process/output/gini_igac.parquet"
 output_2 = "C:/Users/sebas/OneDrive/Documents/CEPAP/team_data/cifras_agro/igac_gini/process/output/gini_igac_perc.parquet"
-Arrow.write(output_1, gini_igac)
-Arrow.write(output_2, gini_igac_perc)
+write_parquet(gini_igac, output_1)
+write_parquet(gini_igac_perc, output_2)
 gini_igac = nothing
 gini_igac_perc = nothing
 
