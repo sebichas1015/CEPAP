@@ -24,8 +24,8 @@ end
 parsed_args = parse_args(s)
 
 println("load functions--", now())
-function coerce_missing(x)
-    return map(item -> ismissing(item) ? missing : string(item), x)
+function coerce_string(item)
+    return ismissing(item) ? missing : string(item)
 end
 
 println("load data--", now())
@@ -44,7 +44,7 @@ desprcn_cnmh = desprcn_cnmh[:, vars_cnmh]
 println("clean data--", now())
 transform!(desprcn_cnmh, AsTable(:) => ByRow(row -> hash(string(row...))) => :record_id)
 
-transform!(desprcn_cnmh, names(desprcn_cnmh) .=> ByRow(string) .=> names(desprcn_cnmh))
+transform!(desprcn_cnmh, names(desprcn_cnmh) .=> ByRow(coerce_string) .=> names(desprcn_cnmh))
 
 println("export--", now())
 write_parquet(desprcn_cnmh, parsed_args["output_cnmh"])
