@@ -7,9 +7,13 @@
 
 using Pkg, DataFrames, Random, Dates, Tables, TidierFiles, ArgParse, Pipe, Cleaner, Transliterate
 
+cd("C:/Users/sebas/OneDrive/Documents/CEPAP/team_data/")
+
 Random.seed!(19481210)
 
-cd("C:/Users/sebas/OneDrive/Documents/CEPAP/team_data/")
+Pkg.activate("cifras_violnc/desprcn_frzd_cnmh_2024/src")
+
+Pkg.instantiate()
 
 println("define args--", now())
 s = ArgParseSettings()
