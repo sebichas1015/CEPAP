@@ -3,6 +3,7 @@
 # Maintainers: Sebas and Nicholas
 # Year: 2024
 # =========================================
+# requerimiento/graphs_desprcn_frzd_2024/src/graphs_desprcns_2024.R
 
 pacman::p_load(readr, dplyr, janitor, logger, assertr, purrr, arrow, sf,
                ggplot2, stringr)
@@ -13,14 +14,26 @@ input_1 <- "cifras_violnc/desprcn_frzd_cnmh_2024/output/import_desprcn_2024.parq
 
 input_2 <- "munis_col_2023/input/MGN2023_MPIO_POLITICO/MGN_ADM_MPIO_GRAFICO.shp"
 
-output_1 <- "cifras_violnc/desprcn_frzd_cnmh_2024/output/time_serie_anio.pdf"
+output_1 <- "requerimiento/graphs_desprcn_frzd_2024/output/time_serie_anio.pdf"
 
-output_2 <- "cifras_violnc/desprcn_frzd_cnmh_2024/output/barr_ethnic.pdf"
+output_2 <- "requerimiento/graphs_desprcn_frzd_2024/output/barr_ethnic.pdf"
 
-output_3 <- "cifras_violnc/desprcn_frzd_cnmh_2024/output/map_munis.pdf"
+output_3 <- "requerimiento/graphs_desprcn_frzd_2024/output/map_munis.pdf"
 
-output_4 <- "cifras_violnc/desprcn_frzd_cnmh_2024/output/tor_sex.pdf"
+output_4 <- "requerimiento/graphs_desprcn_frzd_2024/output/tor_sex.pdf"
 
+log_info("define functions")
+coerce_integer <- function(vec_x) {
+  n_na_1 <- sum(is.na(vec_x))
+  
+  vec_x <- as.integer(vec_x)
+  
+  n_na_2 <- sum(is.na(vec_x))
+  
+  stopifnot(n_na_1 == n_na_2)
+  
+  return(vec_x)
+}
 
 log_info("load data")
 desprcns_cnmh <- read_parquet(input_1)
@@ -30,6 +43,7 @@ munis_shap <- read_sf(input_2) %>%
 
 log_info("filter")
 desprcns_cnmh <- desprcns_cnmh %>% 
+  mutate(ano = coerce_integer(ano)) %>% 
   filter(ano > 1963)
 
 log_info("process")
@@ -39,6 +53,7 @@ time_serie <- desprcns_cnmh %>%
   ungroup()
 
 barr_plot <- desprcns_cnmh %>% 
+  filter(!(is.na(etnia))) %>% 
   group_by(etnia) %>% 
   summarise(n_victs = n_distinct(id_persona)) %>% 
   ungroup()
@@ -71,7 +86,6 @@ graph_time_serie <- time_serie %>%
   theme_minimal()
 
 graph_barr <- barr_plot %>% 
-  filter(!str_detect(etnia, "miss")) %>% 
   mutate(etnia = recode(etnia,
                         "NEGRO(A), MULATO(A), AFRODESCENDIENTE, AFROCOLOMBIANO(A)" =
                           "NEGRO(A), MULATO(A),\n AFRODESCENDIENTE,\n AFROCOLOMBIANO(A)",
@@ -105,6 +119,4 @@ ggsave(output_3, plot = graph_map, width = 8, height = 6, dpi = 80)
 
 ggsave(output_4, plot = graph_tor, width = 8, height = 6, dpi = 300)
 
-log_info("done ")
-
-
+log_info("done graphs_desprcns_2024.R")
