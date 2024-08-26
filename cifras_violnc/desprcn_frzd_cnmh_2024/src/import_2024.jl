@@ -36,11 +36,6 @@ desprcn_cnmh = rename(desprcn_cnmh, Symbol.(transliterate.(string.(lowercase.(na
     polish_names |>
     DataFrame
 
-println("standardize values--", now())
-vars_cnmh = [:id_persona, :sexo, :ano, :etnia, :codigo_dane_de_municipio]
-
-desprcn_cnmh = desprcn_cnmh[:, vars_cnmh]
-
 println("clean data--", now())
 transform!(desprcn_cnmh, AsTable(:) => ByRow(row -> hash(string(row...))) => :record_id)
 
@@ -48,3 +43,5 @@ transform!(desprcn_cnmh, names(desprcn_cnmh) .=> ByRow(coerce_string) .=> names(
 
 println("export--", now())
 write_parquet(desprcn_cnmh, parsed_args["output_cnmh"])
+
+println("done import_2024.jl--", now())
