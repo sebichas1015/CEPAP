@@ -6,7 +6,7 @@
 # requerimiento/graphs_desprcn_frzd_2024/src/graphs_desprcns_2024.R
 
 pacman::p_load(readr, dplyr, janitor, logger, assertr, purrr, arrow, sf,
-               ggplot2, stringr)
+               ggplot2, stringr, rmapshaper)
 
 setwd("/Users/sebas/OneDrive/Documents/CEPAP/team_data/")
 
@@ -39,7 +39,8 @@ log_info("load data")
 desprcns_cnmh <- read_parquet(input_1)
 
 munis_shap <- read_sf(input_2) %>% 
-  clean_names()
+  clean_names() %>% 
+  ms_simplify(., keep = 0.01)
 
 log_info("filter")
 desprcns_cnmh <- desprcns_cnmh %>% 
@@ -115,7 +116,7 @@ ggsave(output_1, plot = graph_time_serie, width = 8, height = 6, dpi = 300)
 
 ggsave(output_2, plot = graph_barr, width = 8, height = 6, dpi = 300)
 
-ggsave(output_3, plot = graph_map, width = 8, height = 6, dpi = 80)
+ggsave(output_3, plot = graph_map, width = 8, height = 6, dpi = 72)
 
 ggsave(output_4, plot = graph_tor, width = 8, height = 6, dpi = 300)
 
