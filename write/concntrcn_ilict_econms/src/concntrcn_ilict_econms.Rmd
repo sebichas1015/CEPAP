@@ -1,0 +1,38 @@
+---
+title: |
+ \includegraphics[height=3.0in]{../../../cepap_general/input/logo_rgb_transparente.png}  
+   
+ Concetración de la tierra y economías ilícitas
+
+output:
+  bookdown::pdf_document2:
+        toc: FALSE
+        latex_engine: lualatex
+        citation_package: biblatex
+        extra_dependencies: "subfig"
+header-includes:
+ - \usepackage{ragged2e}
+ - \usepackage{pdflscape}
+ - \newcommand{\blandscape}{\begin{landscape}}
+ - \newcommand{\elandscape}{\end{landscape}}
+ - \usepackage{graphicx}
+ - \usepackage{fontspec}
+ - \usepackage{afterpage}
+ - \renewcommand{\normalsize}{\fontsize{12}{18}\selectfont}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+\centering
+Sebastián Cristancho^[Los datos expuestos en el presente documento contaron con el procesamiento del equipo de Gestión de la Información
+([GI](https://www.jep.gov.co/JEP/Paginas/Grupo-de-Analisis-de-la-Informacion.aspx)). ]
+
+31  de agosto de 2024
+
+
+\justifying
+
+
+En términos generales,
