@@ -6,13 +6,15 @@
 # requerimiento/graphs_desprcn_frzd_2024/src/graphs_desprcns_2024.R
 
 pacman::p_load(readr, dplyr, janitor, logger, assertr, purrr, arrow, sf,
-               ggplot2, stringr, rmapshaper)
+               ggplot2, stringr, rmapshaper, magick, cowplot)
 
 setwd("/Users/sebas/OneDrive/Documents/CEPAP/team_data/")
 
 input_1 <- "cifras_violnc/desprcn_frzd_cnmh_2024/output/import_desprcn_2024.parquet"
 
 input_2 <- "munis_col_2023/input/MGN2023_MPIO_POLITICO/MGN_ADM_MPIO_GRAFICO.shp"
+
+input_3 <- "cepap_general/input/logo_rgb_transparente.png"
 
 output_1 <- "requerimiento/graphs_desprcn_frzd_2024/output/time_serie_anio.pdf"
 
@@ -41,6 +43,8 @@ desprcns_cnmh <- read_parquet(input_1)
 munis_shap <- read_sf(input_2) %>% 
   clean_names() %>% 
   ms_simplify(., keep = 0.01)
+
+logo <- image_read(input_3)
 
 log_info("filter")
 desprcns_cnmh <- desprcns_cnmh %>% 
@@ -102,6 +106,9 @@ graph_map <- ggplot() +
   geom_sf(data = munis_map, aes(fill = n_victs, geometry = geometry)) +
   scale_fill_gradient(low = "#f8c952", high = "#cc4778") +
   theme_minimal()
+
+graph_map <- ggdraw(graph_map) +
+  draw_image(logo, x = 0.19, y = 0.01, width = 0.3, height = 0.3)
 
 graph_tor <- ggplot(sex_tor, aes(x="", y= prop_sex, fill=sexo)) +
   geom_bar(stat="identity", width=1, color="white", size = 1) +
