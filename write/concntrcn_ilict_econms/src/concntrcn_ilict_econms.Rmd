@@ -1,15 +1,17 @@
 ---
 title: |
  \includegraphics[height=3.0in]{../../../cepap_general/input/logo_rgb_transparente.png}  
-   
- Concetración de la tierra y economías ilícitas
-
+ 
+ Concetración de la tierra y economía de cultivos de uso ilícito
+ 
 output:
   bookdown::pdf_document2:
         toc: FALSE
         latex_engine: lualatex
         citation_package: biblatex
         extra_dependencies: "subfig"
+bibliography: [../hand/referencesgini.bib]
+biblio-style: apa
 header-includes:
  - \usepackage{ragged2e}
  - \usepackage{pdflscape}
@@ -19,20 +21,158 @@ header-includes:
  - \usepackage{fontspec}
  - \usepackage{afterpage}
  - \renewcommand{\normalsize}{\fontsize{12}{18}\selectfont}
+urlcolor: blue
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
-
 \centering
-Sebastián Cristancho^[Los datos expuestos en el presente documento contaron con el procesamiento del equipo de Gestión de la Información
-([GI](https://www.jep.gov.co/JEP/Paginas/Grupo-de-Analisis-de-la-Informacion.aspx)). ]
+Sebastián Cristancho^[Politólogo y especialista en estadística de la Universidad Nacional de Colombia
+([EG](https://scholar.google.com/citations?user=drW2nBEAAAAJ&hl=es&oi=ao)). ]
 
-31  de agosto de 2024
+09  de septiembre de 2024
 
+\vspace{1em}
+
+\vspace{1em}
 
 \justifying
+El presente documento es el primero de una serie de publicaciones que tienen por objeto indagar en la posible relación entre la estructura de la propiedad rural y la presencia de cultivos de uso ilícito en Colombia. En particular, se busca avanzar en la comprensión de las variables que podrían generar un ambiente favorable para la expansión de la economía asociada a los usos lícitos de la hoja de coca. Este trabajo se sustenta en evidencia recientemente publicada por el Instituto Geográfico Agustín Codazzi (en adelante IGAC) y en el último reporte anual del Sistema de información de Drogas de Colombia (SIDCO) del Ministerio de Justicia y del Derecho de Colombia.
+
+\vspace{1em}
+
+# Introducción
+
+Colombia, lamentablemente, se destaca entre sus pares latinoamericanos por ser uno de los países con mayor inequidad agraria y por ser uno de los principales productores de cocaína del mundo. En efecto, Colombia hace parte de una larga lista de democracias que no lograron consumar una reforma agraria redistributiva (@Albertus2015). En su lugar, la reforma agraria colombiana se centró en políticas de acceso a la tierra vía de proyectos de colonización orientada y en avance de la iniciativa indiviual y aventurera por medio de la colonización espontanea.
+
+Y es justamente en estas zonas de colonización en donde se afirma que floreció la economía de los cultivos de uso ilícito (@Ramirez2001, citar plante, pa’lante). El denominado Acuerdo de Chicoral a través de las leyes 4ª de 1973 y 6ª de 1975, liquidó las escasas intentonas del Estado por desmontar el latifundio y repartirlo entre la población con vocación agrícola, pero sin tierra o con tierra insuficiente. La salida al problema de la tierra fue entonces una salida no redistributiva mediante la incorporación de más tierra a la frontera agrícola. Finalmente, las condiciones marginales de estos asentamientos y la reducida presencia estatal propiciarán los primeros cultivos de marihuana, seguidos por los de coca y amapola (citar fajardo comisión historica).
+
+Esta línea argumentativa señala que, al menos en sus orígenes, la proliferación de cultivos de uso ilícito se explica a partir de una distribución de la propiedad rural altamente inequitativa y del fracaso que significó la política de acceso a la tierra del Frente Nacional. Inequidad agraria y expansión de economías ilegales no serían simplemente fenómenos aislados que caracterizan la ruralidad colombiana en múltiples regiones del país, además, serían el correlato de la salida no redistributiva al problema de la tierra.
+
+A continuación, el texto se divide en tres apartados. El primer lugar, se realiza una revisión general de la literatura que se ha aproximado a la relación planteada. Posteriormente, se presenta el paso a paso y los resultados de un ejercicio cuantitativo que busca probar en al menos un sentido la relación entre inequidad agraria y economía de cultivos de uso ilícito. Por último, se presentan algunas conclusiones y se delimitan los alcances del presente ejercicio.
+
+# Estado de la discusión sobre inequidad agraria y cultivos de uso ilícito
+
+(pendiente.)
+
+En el presente apartado se presenta una revisión general de la literatura que relaciona concentración de la propiedad rural y concentración de cultivos de uso ilícito. En este punto es importante señalar que no toda la literatura es cuidadosa al momento de diferenciar entre la inequidad en la distribución de la tierra y las formas de tenencia sobre ella. En varias de las referencias las formas de tenencia se estudian de manera conjunta con la distribución y el acceso a la tierra, y en otras tantas se confunden en una única variable. En consecuencia, la literatura que, a continuación, se presenta es aquella que delimita con precisión su objeto de estudio toda vez que no incurre en formas de estiramiento conceptual.
+
+El estudio de Grimmelmann, Espinoza, Arnold, &amp; Arning, realiza una comparación de las medidas de desarrollo alternativo aplicadas en Afganistán, Bolivia, Colombia, Myanmar y Perú a partir de determinadas variables agrarias. 1 En particular, en esta revisión se abordará la evidencia aportada en el estudio del efecto derivado del acceso a la tierra sobre las estrategias antidrogas. Es importante señalar que cada uno de los casos varía en cuanto al tipo de cultivo ilícito que predomina en su territorio: hoja de coca en Bolivia, Colombia y Perú, y adormidera en los casos de Afganistán y Myanmar.
+
+Una primera evidencia que señalan los autores es la estrecha relación que existe entre alta presencia de cultivos de uso ilícito y desigualdad agraria. Para demostrar esto, el texto contrasta las regiones de Colombia en donde se concentra el área sembrada con cultivos de uso ilícito con la estructura de la propiedad de estas mismas zonas. Se toman los 10 departamentos que concentran más del 95% de los cultivos de coca en el país y el coeficiente Gini de distribución de la tierra para cada uno de ellos. En este ejercicio se observa que, para estos departamentos, el Gini de propiedad rural oscila entre 0.56 y 0.91. A partir de estos resultados, los autores concluyen que los departamentos que concentran las plantaciones de coca exhiben altos niveles de desigualdad agraria (@Grimmelmann2017).
+
+En el caso de Afganistán, se señala que las plantaciones de adormidera se caracterizan por ubicarse en zonas donde predomina la pequeña propiedad. En contraste con otras actividades agrícolas, los altos rendimientos por hectárea que permite la adormidera la convierten en la única opción para el pequeño campesinado que habita estas regiones. Para dar mayor sustento a esta afirmación el trabajo de Grimmelmann et al., referencia una encuesta realizada en el año 2012 por la UNODC con cultivadores de adormidera. La encuesta arrojó que el 20% de los participantes consideraban que las elevadas utilidades que era posible obtener en pequeños predios era la principal razón por la se cultivaba adormidera en la temporada de crecimiento 2011/12 (@Grimmelmann2017) . Sin embargo, en el documento no se citan las otras razones -correspondientes al 80%- por las que los campesinos se deciden por los cultivos ilícitos.
+
+Un estudio realizado después de la prohibición del cultivo de adormidera en Afganistán ilustra las dificultades que encuentran las familias sin tierra para vincularse a otro tipo de economías dentro de la legalidad (@Mansfield2005) . A partir de entrevistas con agricultores que se encontraban vinculados a los cultivos ilícitos se concluye que las familias que se encontraban bajo formas de explotación de aparcería o arrendamiento durante la economía de la adormidera experimentaron dificultades en el tránsito hacia alternativas productivas lícitas. Esto es explicado por las dificultades para generar un nivel de utilidades tal que permita compensar los costos de acceder a una parcela de tierra. El estudio sostiene que tras la prohibición de la adormidera gran parte de los agricultores en contratos de arrendamiento o aparcería tuvieron que acudir al mercado laboral en las ciudades cercanas (@Mansfield2005).
+
+Así también, Vargas (2010) sugiere que los procesos de transformación productiva en las zonas con presencia de cultivos de uso ilícito pasan por políticas que modifiquen la estructura y formalidad de la tierra. De acuerdo con su diagnóstico, detrás del problema de los cultivos ilícitos continúa subyacente un conflicto que se relaciona con la estructura agraria y, dentro de ella, la tenencia de la tierra. Al respecto menciona que muchos de los programas de desarrollo alternativo están diseñados explícitamente para restringir su población objeto a los agricultores con tierra (Vargas, 2010).
+
+Para Vargas, las políticas agrarias tendientes a garantizar la subsistencia de los pobladores rurales deben incluir políticas integrales que incluyan el acceso a la tierra. No obstante, en la exposición de Vargas no quedan claros los mecanismos a través de los cuales el acceso a la tierra crea un ambiente desfavorable a la presencia de cultivos de uso ilícito o, al menos, por los que este acceso contribuiría al éxito de los programas de sustitución en garantizar una alternativa lícita económicamente viable.
+
+(…)
+
+# Análisis cuantitativo de la concentración de la tierra y del grado de proliferación de cultivos de uso ilícito
+
+Este segundo apartado tiene como propósito exponer la forma en la que se distribuyen en el espacio los fenómenos objeto de estudio y de explorar una primera entrada analítica para determinar si existe una relación lineal entre ambos. En este sentido, se presentan múltiples estadísticas descriptivas para cada variable y posteriormente, se aplican dos ejercicios de estadística inferencial a fin de corroborar si las variaciones en el grado de concentración de la propiedad agraria tienen su correlato en la cantidad \textit{n} de hectáreas sembradas con cultivos de uso ilícito. Con este segundo ejercicio se busca determinar si la persistencia de la economía ilícita derivada del cultivo de coca unde sus raíces en el problema de la tierra.
+
+## Aproximación descriptiva
+
+A continuación, se expone el comportamiento de las variables de interés en términos de su variación regional. El apartado se centra en la forma en la que se distribuye a nivel municipal la cantidad \textit{n} de hectáreas para plantaciones de coca, la proporción de hectáreas cultivadas con coca para cada municipio y el grado de concentración de la estructura de la propiedad agraria a partir del índice gini de tierras.
+
+En línea con lo anterior, la unidad mínima de análisis del presente estudio es el municipio. Todos los ejercicios -tanto descriptivos como inferenciales- se presentan a nivel municipal. Esto permite brindar mayor precisión en las conclusiones toda vez que, al incrementar el zoom a nivel geoespacial, se evita que territorios críticos subrepresentados se omitan al ponderarse con sus pares regionales.
+
+En primer lugar, se tienen las cifras de cultivos de uso ilícito en Colombia para el año 2022. De acuerdo con los datos tomados del Observatorio de Drogas de Colombia, en el país se estiman un total de 226.302 has cultivadas con coca, lo cual corresponde al 0.00547 del área nacional sembrada con esta especie vegetal.
+
+Los municipios que más hectáreas sembradas con coca reportan son Tibú (Norte de Santander) con 22.081 has, Tumaco (Nariño) con 20.719 has, Puerto Asís (Putumayo) con 11.504 has, El Tambo (Cauca) con 9.223 has y el Charco (Nariño) con 8.694 has. A continuación, la gráfica No. 1 ilustra las cifras anteriores.
+
+\vspace{1em}
+
+Gráfica No. 1. \textit{Municipios con mayor cantidad de hectáreas cultivadas con coca en orden descendente.}
+
+![](../../../requerimiento/gini_coca_2024/output/graph_barr_top_coca.pdf)
+\begin{center}
+Fuente: Elaboración propia con base en los datos del Observatorio de Drogas de Colombia
+\end{center}
+
+En términos relativos, los municipios con mayor cantidad de hectáreas de coca sembradas en relación con su área total son San Miguel (Putumayo) con 0.16, Valle del Guamuez (Putumayo) con 0.09, El Tarra (Norte de Santander) con 0.09, Tibú (Norte de Santander) con 0.08 y Valdivia (Antioquia) con 0.07. La gráfica No. 2 presenta una visualización de las proporciones aquí expuestas.
+
+\vspace{1em}
+
+Gráfica No. 2. \textit{Municipios con mayor cantidad de hectáreas cultivadas con coca en relación con su área total en orden descendente.}
+
+![](../../../requerimiento/gini_coca_2024/output/graph_barr_top_coca_prop.pdf)
+\begin{center}
+Fuente: Elaboración propia con base en los datos del Observatorio de Drogas de Colombia
+\end{center}
 
 
-En términos generales,
+A fin de identificar la variación regional de las cifras sobre cultivos de coca en el país, a continuación, se adicionan dos mapas de calor que permiten visualizar la distribución municipal de hectáreas cultivadas con coca en términos absolutos y relativos. El objetivo es identificar tanto la tendencia de concentraciones regional de economías ilícitas, así como la distribución en el espacio de municipios críticos. Al respecto, la gráfica No. 3 da cuenta de la intensidad de las plantaciones de coca en hectáreas cultivas. En este mismo sentido, la gráfica No. 4 ilustra la intensidad de las plantaciones de coca en términos de la proporción del área total municipal cultivada.
+
+\vspace{1em}
+
+Gráfica No. 3. \textit{Grado de intensidad de cultivos de uso ilícito a nivel municipal para el año 2022}
+
+![](../../../requerimiento/gini_coca_2024/output/graph_map_coca.pdf)
+\begin{center}
+Fuente: Elaboración propia con base en los datos del Observatorio de Drogas de Colombia
+\end{center}
+
+Gráfica No. 4. \textit{Grado de intensidad de cultivos de uso ilícito en relación con el área total municipal para el año 2022}
+
+![](../../../requerimiento/gini_coca_2024/output/graph_map_coca_prop.pdf)
+\begin{center}
+Fuente: Elaboración propia con base en los datos del Observatorio de Drogas de Colombia
+\end{center}
+
+De acuerdo con las cifras presentadas por el IGAC, los municipios críticos en lo relativo a la concentración de la propiedad agraria son Buenaventura (Valle del Cauca) con un índice gini del 0,987, seguido por Mosquera (Nariño) con un gini de 0,982, Olaya Herrera (Nariño) con 0.982, Istmina con 0.981 y Roberto Payán (Nariño) con 0.981.
+
+En este punto es necesario mencionar dos puntos a considerar. En primer lugar, todos estos municipios corresponden a la región del pacífico colombiano. En ese sentido, una agenda de investigación por explorar intentaría identificar cuáles son las condiciones de dicha región que ofrecen un ambiente favorable para la concentración de la tierra. En segundo lugar y como correlato del primer punto, buena parte de los territorios de la región pacífica se caracterizan por poseer consejos comunitarios, los cuales brindan un título colectivo para las comunidades que comparten un sentido de pertenencia, una cultura y una dinámica económica propia (citar ley 70 de 1993). Sin embargo, queda pendiente identificar la forma como el IGAC determina el gini toda vez que son territorios caracterizados por la adjudicación de títulos colectivos a los órganos de gobierno en tanto autoridades étnico-territoriales.
+
+El Gráfico No. 5 ilustra en orden descendente los primeros 10 municipios críticos de acuerdo con el gini a partir de un gráfico de barras. Dada la cercanía en las puntuaciones de estos municipios, no se observan diferencias significativas entre éstos.
+
+\vspace{1em}
+
+Gráfica No. 5. \textit{Municipios con mayor concentración de la propiedad agraria.}
+
+![](../../../requerimiento/gini_coca_2024/output/graph_barr_top_gini.pdf)
+\begin{center}
+Fuente: Elaboración propia con base en los datos del Instituto Geográfico Agustín Codazzi
+\end{center}
+
+En este mismo sentido, a continuación, se añade un mapa de calor cuyo propósito es presentar gráficamente el nivel de concentración de la tierra a nivel municipal e identificar mediante visualizaciones los territorios que más se aproximan a 1 y a 0.
+
+\vspace{1em}
+
+Gráfica No. 6. \textit{Grado de intensidad de la concentraición de la propiedad agraria a nivel municipal.}
+
+![](../../../requerimiento/gini_coca_2024/output/graph_map_gini.pdf)
+\begin{center}
+Fuente: Elaboración propia con base en los datos del Instituto Geográfico Agustín Codazzi
+\end{center}
+
+Como se observa en el gráfico anterior, buena parte del territorio nacional es susceptible de clasificarse como territorios críticos en términos de la distribución de la estructura de la propiedad agraria dada su proximidad con un gini de coentración total.
+
+## Aproximación inferencial
+
+(pendiente.)
+
+Gráfica No. 7. \textit{Hectáreas cultivadas con coca en función del gini de tierras a nivel municipal.}
+
+![](../../../requerimiento/gini_coca_2024/output/graph_scatter_gini_coca.pdf)
+\begin{center}
+Fuente: Elaboración propia con base en los datos del Instituto Geográfico Agustín Codazzi y del Observatorio de Drogas de Colombia
+\end{center}
+
+
+Gráfica No. 8. \textit{Proporción de hectáreas cultivadas con coca en función del gini de tierras a nivel municipal.}
+
+![](../../../requerimiento/gini_coca_2024/output/graph_scatter_gini_coca_prop.pdf)
+\begin{center}
+Fuente: Elaboración propia con base en los datos del Instituto Geográfico Agustín Codazzi y del Observatorio de Drogas de Colombia
+\end{center}
+
+
+# Conclusiones
+
+(pendiente.)
+
+
+
