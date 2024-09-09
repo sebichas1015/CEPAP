@@ -71,7 +71,7 @@ Para Vargas, las políticas agrarias tendientes a garantizar la subsistencia de 
 
 # Análisis cuantitativo de la concentración de la tierra y del grado de proliferación de cultivos de uso ilícito
 
-Este segundo apartado tiene como propósito exponer la forma en la que se distribuyen en el espacio los fenómenos objeto de estudio y de explorar una primera entrada analítica para determinar si existe una relación lineal entre ambos. En este sentido, se presentan múltiples estadísticas descriptivas para cada variable y posteriormente, se aplican dos ejercicios de estadística inferencial a fin de corroborar si las variaciones en el grado de concentración de la propiedad agraria tienen su correlato en la cantidad \textit{n} de hectáreas sembradas con cultivos de uso ilícito. Con este segundo ejercicio se busca determinar si la persistencia de la economía ilícita derivada del cultivo de coca unde sus raíces en el problema de la tierra.
+Este segundo apartado tiene como propósito exponer la forma en la que se distribuyen en el espacio los fenómenos objeto de estudio y de explorar una primera entrada analítica para determinar si existe una relación lineal entre ambos. En este sentido, se presentan múltiples estadísticas descriptivas para cada variable y posteriormente, se aplican dos ejercicios de estadística inferencial a fin de corroborar si las variaciones en el grado de concentración de la propiedad agraria tienen su correlato en la cantidad \textit{n} de hectáreas sembradas con cultivos de uso ilícito. Con este segundo ejercicio se busca determinar si la persistencia de la economía ilícita derivada del cultivo de coca hunde sus raíces en el problema de la tierra.
 
 ## Aproximación descriptiva
 
@@ -126,7 +126,7 @@ De acuerdo con las cifras presentadas por el IGAC, los municipios críticos en l
 
 En este punto es necesario mencionar dos puntos a considerar. En primer lugar, todos estos municipios corresponden a la región del pacífico colombiano. En ese sentido, una agenda de investigación por explorar intentaría identificar cuáles son las condiciones de dicha región que ofrecen un ambiente favorable para la concentración de la tierra. En segundo lugar y como correlato del primer punto, buena parte de los territorios de la región pacífica se caracterizan por poseer consejos comunitarios, los cuales brindan un título colectivo para las comunidades que comparten un sentido de pertenencia, una cultura y una dinámica económica propia (citar ley 70 de 1993). Sin embargo, queda pendiente identificar la forma como el IGAC determina el gini toda vez que son territorios caracterizados por la adjudicación de títulos colectivos a los órganos de gobierno en tanto autoridades étnico-territoriales.
 
-El Gráfico No. 5 ilustra en orden descendente los primeros 10 municipios críticos de acuerdo con el gini a partir de un gráfico de barras. Dada la cercanía en las puntuaciones de estos municipios, no se observan diferencias significativas entre éstos.
+El Gráfico No. 5 ilustra en orden descendente los primeros 10 municipios críticos de acuerdo con el gini de tierras mediante de un gráfico de barras. Dada la cercanía en las puntuaciones de estos municipios, no se observan diferencias significativas entre éstos.
 
 \vspace{1em}
 
