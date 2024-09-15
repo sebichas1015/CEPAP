@@ -1,0 +1,51 @@
+---
+title: |
+ \includegraphics[height=3.0in]{../../../cepap_general/input/logo_rgb_transparente.png}  
+ 
+ Repositorio CEPAP
+ 
+output:
+  bookdown::pdf_document2:
+        toc: FALSE
+        latex_engine: lualatex
+        citation_package: biblatex
+        extra_dependencies: "subfig"
+bibliography: [../hand/referencesgini.bib]
+biblio-style: apa
+header-includes:
+ - \usepackage{ragged2e}
+ - \usepackage{pdflscape}
+ - \newcommand{\blandscape}{\begin{landscape}}
+ - \newcommand{\elandscape}{\end{landscape}}
+ - \usepackage{graphicx}
+ - \usepackage{fontspec}
+ - \usepackage{afterpage}
+ - \renewcommand{\normalsize}{\fontsize{12}{18}\selectfont}
+urlcolor: blue
+---
+
+\justifying
+
+Septiembre 2024
+
+\vspace{1em}
+
+\vspace{1em}
+
+El Centro de Pensamiento Autónomo y Popular (en adelante, CEPAP) es una corporación que tiene como objetivo aportar a la transformación social para la construcción de una sociedad justa, incluyente y en paz en Colombia. Su enfoque es el de la investigación-acción en torno al conflicto y la educación popular partiendo del diálogo con las narrativas que se construyen desde los territorios a través de la horizontalidad, la solidaridad, la rebeldía, la crítica y la reflexión.
+
+A continuación, se realiza una breve descripción del repositorio del CEPAP y de la forma cómo ha sido estructurado.
+
+El repositorio tiene como propósito garantizar la transparencia y visibilidad del material y los ejercicios cuantitativos realizados por el Equipo de Gestión y Análisis de Datos (EGAD). Gracias a que el código y la estructura de carpetas se almacena en la nube, se garantiza que cualquier persona pueda realizar consultas y auditorías a la totalidad de los resultados producidos desde el EGAD.
+
+En cuanto al diseño de la estructura de rutas y carpetas, el repositorio del CEPAP se organiza de la siguiente forma:
+
+* **cifras_agro:** Esta carpeta contiene la información relativa al agro en Colombia. En su interior se disponen los ejercicios de limpieza y procesamiento del Censo Nacional Agropecuario 2014 ([DANE](https://microdatos.dane.gov.co/index.php/catalog/513)), el índice gini ([IGAC](https://www.igac.gov.co/el-igac/areas-estrategicas/direccion-de-investigacion-y-prospectiva)), las cifras sobre fragmentación y distribución de la propiedad agraria ([IGAC](https://www.igac.gov.co/el-igac/areas-estrategicas/direccion-de-investigacion-y-prospectiva)) y los resultados municipales sobre cultivos de coca para el año 2024 ([SIDCO](https://www.minjusticia.gov.co/programas-co/ODC/Paginas/SIDCO-departamento-municipio.aspx)).
+
+* **cifras_violnc:** Se disponen los archivos que refieren a las cifras de violencia en Colombia. Se cuenta con los datos de desaparición forzada desagregados por año, municipio, sexo, etnia y presuntos perpetradores ([CNMH](https://micrositios.centrodememoriahistorica.gov.co/observatorio/portal-de-datos/base-de-datos/)).
+
+* **mapas:** Capas vectoriales para distintos niveles territoriales y político-administrativos del territorio de Colombia. Permiten realizar análisis con perspectiva geoespacial. Se disponen el mapa de municipios de Colombia para el año 2023 ([DANE](https://geoportal.dane.gov.co/servicios/descarga-y-metadatos/datos-geoestadisticos/)), el mapa de municipios de Colombia para el año 2021 ([DANE](https://geoportal.dane.gov.co/servicios/descarga-y-metadatos/datos-geoestadisticos/)) y el mapa de veredas de Colombia para el año 2023 ([Esri](https://datosabiertos.esri.co/datasets/77ed663482a74b6990d34231f444a17b/explore)).
+
+* **requerimientos:**  En esta carpeta se ubican todos los requerimientos que se hacen al EGAD. El objetivo de ello es llevar un registro de dichas solicitudes y garantizar la transparencia de los ejercicios cuantitativos.
+
+* **write:** Esta ruta contiene todos los documentos generados en código Markdown. Se busca generar documentos reproducibles, auditables y colaborativos tendientes a asegurar la transparencia de los resultados contenidos en los informes producidos por el EGAD.
