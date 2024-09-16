@@ -6,7 +6,7 @@
 
 **Septiembre 2024**
 
-El Centro de Pensamiento Autónomo y Popular (en adelante, CEPAP) es una corporación que tiene como objetivo aportar a la transformación social para la construcción de una sociedad justa, incluyente y en paz en Colombia. Su enfoque es el de la investigación-acción en torno al conflicto y la educación popular partiendo del diálogo con las narrativas que se construyen desde los territorios a través de la horizontalidad, la solidaridad, la rebeldía, la crítica y la reflexión.
+El Centro de Pensamiento Autónomo y Popular es una corporación que tiene como objetivo aportar a la transformación social para la construcción de una sociedad justa, incluyente y en paz en Colombia desde la investigación-acción alrededor del conflicto y la educación popular. Esto partiendo del diálogo con las narrativas que se construyen desde los territorios, a través de la horizontalidad, la solidaridad, la rebeldía, la crítica y la reflexión.
 
 A continuación, se realiza una breve descripción del repositorio del CEPAP y de la forma cómo ha sido estructurado.
 
@@ -22,7 +22,7 @@ El repositorio del CEPAP se organiza de la siguiente forma:
 
 - **cifras_violnc**: Se disponen los archivos que refieren a las cifras de violencia en Colombia. Se cuenta con los datos de desaparición forzada desagregados por año, municipio, sexo, etnia y presuntos perpetradores ([CNMH](https://micrositios.centrodememoriahistorica.gov.co/observatorio/portal-de-datos/base-de-datos/)).
 
-- **mapas**: Capas vectoriales para distintos niveles territoriales y político-administrativos del territorio de Colombia. Permiten realizar análisis con perspectiva geoespacial. Se disponen el mapa de municipios de Colombia para el año 2023 ([DANE](https://geoportal.dane.gov.co/servicios/descarga-y-metadatos/datos-geoestadisticos/)), el mapa de municipios de Colombia para el año 2021 ([DANE](https://geoportal.dane.gov.co/servicios/descarga-y-metadatos/datos-geoestadisticos/)) y el mapa de veredas de Colombia para el año 2023 ([Esri](https://datosabiertos.esri.co/datasets/77ed663482a74b6990d34231f444a17b/explore)).
+- **mapas**: Capas vectoriales para distintos niveles territoriales y político-administrativos de Colombia. Permiten realizar análisis con perspectiva geoespacial. Se disponen el mapa de municipios de Colombia para el año 2023 ([DANE](https://geoportal.dane.gov.co/servicios/descarga-y-metadatos/datos-geoestadisticos/)), el mapa de municipios de Colombia para el año 2021 ([DANE](https://geoportal.dane.gov.co/servicios/descarga-y-metadatos/datos-geoestadisticos/)) y el mapa de veredas de Colombia para el año 2023 ([Esri](https://datosabiertos.esri.co/datasets/77ed663482a74b6990d34231f444a17b/explore)).
 
 - **requerimientos**: En esta carpeta se ubican todos los requerimientos que se hacen al EGAD. El objetivo de ello es llevar un registro de dichas solicitudes y garantizar la transparencia de los ejercicios cuantitativos.
 
