@@ -1,6 +1,7 @@
-# CEPAP - Centro de Pensamiento Autónomo y Popular
+# Repositorio CEPAP
 
-## Repositorio CEPAP
+![logo_rgb_transparente](https://github.com/user-attachments/assets/580c084c-5566-4c18-9c32-61845ec2eb5e)
+
 
 **Septiembre 2024**
 
