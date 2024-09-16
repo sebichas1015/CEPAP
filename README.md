@@ -1,4 +1,6 @@
-<img src="https://github.com/user-attachments/assets/580c084c-5566-4c18-9c32-61845ec2eb5e" alt="logo_rgb_transparente" width="300" height="300">
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/580c084c-5566-4c18-9c32-61845ec2eb5e" alt="logo_rgb_transparente" width="400" height="400">
+</div>
 
 # Repositorio CEPAP
 
