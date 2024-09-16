@@ -1,6 +1,6 @@
 # Repositorio CEPAP
 
-![logo_rgb_transparente](https://github.com/user-attachments/assets/580c084c-5566-4c18-9c32-61845ec2eb5e)
+<img src="https://github.com/user-attachments/assets/580c084c-5566-4c18-9c32-61845ec2eb5e" alt="logo_rgb_transparente" width="200" height="100">
 
 
 **Septiembre 2024**
