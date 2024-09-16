@@ -18,7 +18,7 @@ El repositorio tiene como propósito garantizar la transparencia y visibilidad d
 
 El repositorio del CEPAP se organiza de la siguiente forma:
 
-- **cifras_agro**: Esta carpeta contiene la información relativa al agro en Colombia. En su interior se disponen los ejercicios de limpieza y procesamiento del Censo Nacional Agropecuario 2014 (DANE), el índice gini (IGAC), las cifras sobre fragmentación y distribución de la propiedad agraria (IGAC) y los resultados municipales sobre cultivos de coca para el año 2024 (SIDCO).
+- **cifras_agro**: Esta carpeta contiene la información relativa al agro en Colombia. En su interior se disponen los ejercicios de limpieza y procesamiento del Censo Nacional Agropecuario 2014 ([DANE](https://microdatos.dane.gov.co/index.php/catalog/513)), el índice gini (IGAC), las cifras sobre fragmentación y distribución de la propiedad agraria (IGAC) y los resultados municipales sobre cultivos de coca para el año 2024 (SIDCO).
 
 - **cifras_violnc**: Se disponen los archivos que refieren a las cifras de violencia en Colombia. Se cuenta con los datos de desaparición forzada desagregados por año, municipio, sexo, etnia y presuntos perpetradores (CNMH).
 
