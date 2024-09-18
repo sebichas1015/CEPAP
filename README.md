@@ -6,7 +6,9 @@
 
 **Septiembre 2024**
 
-El Centro de Pensamiento Autónomo y Popular es una corporación que tiene como objetivo aportar a la transformación social para la construcción de una sociedad justa, incluyente y en paz en Colombia desde la investigación-acción alrededor del conflicto y la educación popular. Esto partiendo del diálogo con las narrativas que se construyen desde los territorios, a través de la horizontalidad, la solidaridad, la rebeldía, la crítica y la reflexión.
+El Centro de Pensamiento Autónomo y Popular (CEPAP) es una corporación que aporta a la transformación social, para así, construir una sociedad justa, incluyente y en paz en Colombia. Para estos objetivos hace uso de herramientas propias de la investigación-acción, orbitando alrededor de los siguientes ejes temáticos: "Rutas hacia la paz: Estudios de las dimensiones temporales y espaciales del conflicto"; "Género, diversidades y resistencias" y "Conflicto, territorios y educación popular".
+
+Los objetivos del CEPAP parten del diálogo con narrativas que se construyen desde los territorios, a través de la horizontalidad, la solidaridad, la crítica y la reflexión.
 
 A continuación, se realiza una breve descripción del repositorio del CEPAP y de la forma cómo ha sido estructurado.
 
