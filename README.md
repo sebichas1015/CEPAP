@@ -1,7 +1,3 @@
-
-![Mesa de trabajo 3 copia 3](https://github.com/user-attachments/assets/c51a823e-ad0e-464c-b045-9fa2909ed015)
-
-
 <div align="center">
   <img src="https://github.com/user-attachments/assets/c51a823e-ad0e-464c-b045-9fa2909ed015" alt="logo_rgb_transparente" width="400" height="400">
 </div>
