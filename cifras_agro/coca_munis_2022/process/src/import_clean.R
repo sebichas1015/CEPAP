@@ -6,7 +6,7 @@
 # CO-JXXXXXXXXXX
 
 pacman::p_load(argparse, here, dplyr, logger, arrow, assertr, openxlsx, janitor,
-               tidyr, stringr)
+               tidyr, stringr, polars)
 
 setwd("/Users/sebas/OneDrive/Documents/CEPAP/team_data/")
 

@@ -216,6 +216,3 @@ write_xlsx(results_icononzo_castillo, output_1)
   
 
 log_info("DONE RESULTS.")
-
-
-
